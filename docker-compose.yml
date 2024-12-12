@@ -1,0 +1,15 @@
+version: "3.1"
+
+services:
+  dvwa:
+    image: vulnerables/web-dvwa
+    ports:
+      - "80:80"
+    environment:
+      - DVWA_DB_USER=dvwa
+      - DVWA_DB_PASSWORD=somepassword
+    volumes:
+      - dvwa_data:/var/lib/mysql
+
+volumes:
+  dvwa_data:
